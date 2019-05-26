@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../styles/minify/main.min.css">
+  <title>Agile - Test</title>
+</head>
+
+<body class="body-movie">
+  <section class="movie">
+
+    <header class="movie-header">
+      <div>
+        <p class="movie-title">Penny Dreadfull</p>
+        <p class="movie-info">80% Indicado / Ciencia Ficcion / 2015 / EUA / 14</p>
+      </div>
+      <img class="movie-img__btn" src="../images/assets_tv_show_detail/close-search-w.svg" alt="Close Button">
+    </header>
+
+    <div class="side-bar">
+      <div class="side-bar-temp">
+        <p class="temp temp-active">T1</p>
+        <p class="temp">T2</p>
+        <p class="temp">T3</p>
+      </div>
+      <ul class="side-bar-list side-bar-list-active">
+        <li class="episode">
+          <div class="header-toggle">
+            <div class="info">
+              <p class="episode-num"></p>
+              <p class="episode-title"></p>
+            </div>
+            <img class="episode-img" src="../images/assets_tv_show_detail/play-small-player-w.svg" alt="">
+          </div>
+          <div class="content-toggle" style="display: none;">
+            <img class="content-toggle-img" alt="">
+            <p class="content-toggle-synopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, odio. Doloribus, similique eos placeat
+              laboriosam neque maiores, fuga harum molestiae soluta velit laudantium reiciendis earum rem. Consequuntur
+              voluptatum repellat distinctio.</p>
+          </div>
+        </li>
+      </ul>
+      <ul class="side-bar-list">
+        <li class="episode">
+          <div class="info">
+            <p class="episode-num">2</p>
+            <p class="episode-title">Nice Work</p>
+          </div>
+          <img class="episode-img" src="../images/assets_tv_show_detail/play-small-player-w.svg" alt="">
+        </li>
+        <li class="episode">
+          <div class="info">
+            <p class="episode-num">2</p>
+            <p class="episode-title">Nice Work</p>
+          </div>
+          <img class="episode-img" src="../images/assets_tv_show_detail/play-small-player-w.svg" alt="">
+        </li>
+        <li class="episode">
+          <div class="info">
+            <p class="episode-num">2</p>
+            <p class="episode-title">Nice Work</p>
+          </div>
+          <img class="episode-img" src="../images/assets_tv_show_detail/play-small-player-w.svg" alt="">
+        </li>
+      </ul>
+      <ul class="side-bar-list">
+        <li class="episode">
+          <div class="info">
+            <p class="episode-num">3</p>
+            <p class="episode-title">Nice Work</p>
+          </div>
+          <img class="episode-img" src="../images/assets_tv_show_detail/play-small-player-w.svg" alt="">
+        </li>
+        <li class="episode">
+          <div class="info">
+            <p class="episode-num">3</p>
+            <p class="episode-title">Nice Work</p>
+          </div>
+          <img class="episode-img" src="../images/assets_tv_show_detail/play-small-player-w.svg" alt="">
+        </li>
+        <li class="episode">
+          <div class="info">
+            <p class="episode-num">3</p>
+            <p class="episode-title">Nice Work</p>
+          </div>
+          <img class="episode-img" src="../images/assets_tv_show_detail/play-small-player-w.svg" alt="">
+        </li>
+      </ul>
+    </div>
+
+    <footer class="movie-footer">
+      <div class="movie-footer-menu">
+        <p class="option option-active">General</p>
+        <p class="option">Elenco</p>
+        <p class="option">Princioales Premios</p>
+      </div>
+      <div class="movie-footer-info movie-footer-info-active">
+        <div class="grp-btn">
+          <div class="btn">
+            <img src="../images/assets_tv_show_detail/add-gray-s.svg" alt="Add to my list">
+            <p class="btn-text">My list</p>
+          </div>
+          <div class="btn">
+            <img src="../images/assets_tv_show_detail/sad-gray-w.svg" alt="To evaluate">
+            <p class="btn-text">Evaluar</p>
+          </div>
+          <div class="btn">
+            <img src="../images/assets_tv_show_detail/rec-gray-s.svg" alt="Record">
+            <p class="btn-text">Grabar</p>
+          </div>
+          <div class="btn">
+            <img src="../images/assets_tv_show_detail/share-gray-s.svg" alt="To share">
+            <p class="btn-text">Compartir</p>
+          </div>
+        </div>
+        <div class="movie-footer-info-sinopse">
+          <p>Sinopse</p>
+          <p id="synopsis"></p>
+        </div>
+      </div>
+    </footer>
+
+  </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="../scripts/minify/main.min.js"></script>
+<script>
+  jQuery(function () {
+    home.init();
+  });
+</script>
+
+</html>
