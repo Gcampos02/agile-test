@@ -26,6 +26,7 @@
     "gulp-open": "*"
   },
   "dependencies": {
+    "gulp-babel": "^8.0.0",
     "sweetalert": "^2.1.0"
   }
 }

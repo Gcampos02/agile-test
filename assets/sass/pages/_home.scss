@@ -4,7 +4,7 @@ body {
   height: 100%;
 }
 
-.body-movie{
+.body-movie {
   background-color: $color-black;
 }
 
@@ -39,6 +39,7 @@ body {
     background: #13171a;
     padding: 20px 20px;
     z-index: 2;
+    height: 215px;
     &-menu {
       display: flex;
       box-shadow: inset 0 -2px 0 grey;
@@ -73,6 +74,14 @@ body {
       }
       &-sinopse {
         text-align: left;
+        p{
+          font-size: 14px;
+          line-height: 18px;
+        }
+        &__title{
+          font-size: 16px;
+          text-transform: uppercase;
+        }
       }
     }
   }
@@ -100,17 +109,16 @@ body {
     }
   }
   &-list {
-    display: none;
     list-style-type: none;
-    &-active {
-      display: block;
-    }
     .episode {
-      display: flex;
       flex-direction: column;
       padding-bottom: 10px;
       margin-bottom: 10px;
       border-bottom: 1px solid gray;
+      display: none;
+      &-active {
+        display: flex;
+      }
       .header-toggle {
         display: flex;
         justify-content: space-between;
@@ -120,10 +128,10 @@ body {
         margin-top: 10px;
         cursor: pointer;
       }
-      .content-toggle{
+      .content-toggle {
         margin-top: 10px;
         display: none;
-        &-img{
+        &-img {
           width: 100%;
         }
       }
@@ -144,4 +152,97 @@ body {
       }
     }
   }
+}
+
+
+.abas {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+    font-family: "Poppins", Sans-serif;
+    overflow: auto;
+}
+
+.aba {
+	padding: 18px 0px;
+  position: relative;
+	text-align: left;
+  cursor: pointer;
+  color: #3f4752;
+    font-weight: 200;
+    transition: background 350ms ease, color 350ms ease;
+    margin-right: 60px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.aba:last-child {
+	border-right: 0;
+}
+.aba.ativa,
+.aba.selected {
+  box-shadow: inset 0 -2px 0 green;
+}
+.aba.selected span {
+	color: #ffffff;
+}
+
+.TabControl{
+	width:100%;
+	position: relative;
+	z-index: 10;
+}
+
+.TabControl #header{
+	width:100%;
+	display: flex;
+  position: relative;
+  box-shadow: inset 0 -2px 0 grey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.TabControl #content{
+	width:100%;
+	height:100%;
+}
+
+.TabControl .conteudo{
+	width:100%;
+	background:#27408B;
+	display:none;
+	height:100%;
+	color:#fff;
+}
+
+.tab-content {
+	max-width: 100%;
+	line-height: 100%;
+	margin: 30px 0;
+	display: none;
+}
+.tab-content:first-child {
+	display: block;
+}
+
+
+.cast-card{
+  padding: 20px 0px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  background: #3f4752;
+  margin: 0 5px;
+  &__character{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__actor{
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+}
+.multiple-items{
+  margin: 0 20px;
 }
