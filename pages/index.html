@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../styles/minify/main.min.css">
   <link rel="stylesheet" href="../styles/plugin/slick/slick-theme.css">
   <link rel="stylesheet" href="../styles/plugin/slick/slick.css">
+  <link rel="stylesheet" href="../styles/minify/main.min.css">
   <title>next</title>
 </head>
 
@@ -33,27 +33,27 @@
 
     <footer class="movie-footer">
       <div class="abas-content TabControl">
+        <div class="scroll-btn">
+          <i class="fas fa-chevron-up"></i>
+        </div>
         <div id="header">
           <ul class="abas">
             <li class="aba selected" data-slug="fachada">
               <span>General</span>
             </li>
-            <li class="aba" data-slug="lazer">
+            <li class="aba" data-slug="lazer" id="elenco">
               <span>Elenco</span>
             </li>
             <li class="aba" data-slug="teste">
               <span>Principales Premios</span>
             </li>
-            <!-- <li class="aba" data-slug="plantas">
-              <span>Plantas</span>
-            </li> -->
           </ul>
           <img src="../images/assets_tv_show_detail/logo-telecine.svg" alt="Logo Telecine">
         </div>
 
         <div id="content">
           <!--  -->
-          <div class="tab-content" id="fachada">
+          <div class="tab-content" style="display: block" id="fachada">
             <div class="movie-footer-info movie-footer-info-active">
               <div class="grp-btn">
                 <div class="btn">
@@ -80,7 +80,7 @@
             </div>
           </div>
           <!--  -->
-          <div class="tab-content" style="display: none" id="lazer">
+          <div class="tab-content" style="display: block" id="lazer">
             <div class="multiple-items">
               <div class="item">
                 <div class="cast-card">
@@ -118,7 +118,7 @@
                   <div class="cast-card__actor">Atriz ou Ator</div>
                 </div>
               </div>
-              
+
               <div class="item">
                 <div class="cast-card">
                   <div class="cast-card__character">Personagem</div>
@@ -149,10 +149,10 @@
 
   </section>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="../scripts/minify/main.min.js"></script>
-  <script src="../styles/plugin/slick/slick.js"></script>
+<script src="../scripts/jquery.js"></script>
+<script src="https://kit.fontawesome.com/44eae81068.js"></script>
+<script src="../styles/plugin/slick/slick.min.js"></script>
+<script src="../scripts/minify/main.min.js"></script>
 <script>
   jQuery(function () {
     home.init();

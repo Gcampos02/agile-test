@@ -8,21 +8,41 @@ var structure = {
 
 var home = {
   init: function () {
-    this.slick();
     this.tvShow();
     this.episodes();
     this.select();
     this.aba();
+    this.cast();
+    this.slick();
   },
 
-  slick: function (){
-    // $('.multiple-items').slick({
-    //   infinite: true,
-    //   slidesToShow: 6,
-    //   slidesToScroll: 1
-    // });
+  cast: function () {
+    $.ajax({
+      url: 'https://sample-api-78c77.firebaseio.com/tv-shows/SHOW123.json',
+      dataType: 'json',
+      success: function (tvshow) {
+        array = tvshow.Cast.length;
+        for (i = 0; i <= array.length; i++) {
+          $(".tab-content").append('\
+            <div class="item">\
+            <div class="cast-card">\
+              <div class="cast-card__character">'+ tvshow.Cast[i].Name + '</div>\
+              <div class="cast-card__actor">Atriz ou Ator</div>\
+            </div>\
+          </div>\
+            ');
+        }
+        $(".movie-title").html(tvshow.Title);
+        $(".year").html(tvshow.Year);
+        $("#synopsis").html(tvshow.Synopsis);
+        $('.body-movie').attr('style', 'Background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(' + tvshow.Images.Background + ')')
+      }
+    });
+  },
+
+  slick: function () {
     $('.multiple-items').slick({
-      dots: true,
+      dots: false,
       infinite: false,
       speed: 300,
       slidesToShow: 6,
@@ -31,17 +51,15 @@ var home = {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
+            slidesToShow: 4,
+            slidesToScroll: 1,
           }
         },
         {
           breakpoint: 600,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2
+            slidesToScroll: 1
           }
         },
         {
@@ -51,14 +69,10 @@ var home = {
             slidesToScroll: 1
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
     });
   },
 
-  
   select: function () {
     $('.temp').click(function () {
       $(this).parent().find('.temp-active')
@@ -67,7 +81,6 @@ var home = {
     });
 
     $('.option').click(function () {
-      console.log('oi')
       $(this).parent().find('.option-active')
         .removeClass('option-active');
       $(this).addClass('option-active');
@@ -77,14 +90,19 @@ var home = {
       $(this).next('.content-toggle').slideToggle(600);
     });
 
-    $('.temp2').click(function(){
+    $('.temp2').click(function () {
       $('.side-bar-list').find('.episode-active').removeClass('episode-active');
       $('.side-bar-list').find('.season2').addClass('episode-active');
     })
 
-    $('.temp1').click(function(){
+    $('.temp1').click(function () {
       $('.side-bar-list').find('.episode-active').removeClass('episode-active');
       $('.side-bar-list').find('.season1').addClass('episode-active');
+    })
+
+    $('.scroll-btn').click(function(){
+      $(this).find('i').toggleClass('fa-chevron-up fa-chevron-down')
+      $('.movie-footer').toggleClass('select');
     })
 
   },
@@ -141,21 +159,26 @@ var home = {
     $('.side-bar-list').find('.episode').addClass('side-bar-list-active');
   },
 
-  aba: function (){
-    $(document).click(function(e) {
+  aba: function () {
+    $('#elenco').click(function () {
+
+      $('#lazer').addClass('select');
+    });
+
+    $(document).click(function (e) {
       if (!$(e.target).is('.select, .select *')) {
         $(".select").removeClass('active');
       }
     });
+
     $(".abas li:first-child div").addClass("selected");
-    $(".aba").click(function(){
+    $(".aba").click(function () {
       $(this).closest('.TabControl').find(".aba").removeClass("selected");
       $(this).addClass("selected");
-    
+
       $(this).closest('.TabControl').find("#content .tab-content").hide();
       var indice = $(this).attr('data-slug');
-      $("#"+indice).show();
+      $("#" + indice).show();
     });
   },
-
 };
